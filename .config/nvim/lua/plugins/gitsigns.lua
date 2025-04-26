@@ -1,0 +1,14 @@
+return {
+  "lewis6991/gitsigns.nvim",   
+  config = function()
+    local gitsigns = require('gitsigns')
+
+    gitsigns.setup {
+      word_diff = true, 
+    }
+
+    vim.keymap.set("n", "<leader>d", function()
+      gitsigns.preview_hunk() 
+    end)
+  end
+}
