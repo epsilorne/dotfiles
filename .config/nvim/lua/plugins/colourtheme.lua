@@ -1,7 +1,7 @@
 return {
-  "loctvl842/monokai-pro.nvim",
+  "iagorrr/noctis-high-contrast.nvim", 
   lazy = false,
   config = function()
-    vim.cmd('colorscheme monokai-pro-classic')
+    vim.cmd('colorscheme noctishc')
   end
 }

@@ -1,0 +1,28 @@
+*{
+	background-image: none;
+}
+window{
+  background-color: rgba(10, 10, 10, 0.7);
+}
+
+#buttons{
+  padding: 2100px
+}
+
+button{
+  background-color: #000000;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+
+  font-size: 18px;
+  font-family: FiraCode Nerd Font;
+
+  padding: 50px;
+  margin: 20px;
+}
+
+button:focus, button:active, button:hover{
+	background-color: #ffffff;
+  color: #000000;
+	outline-style: none;
+}

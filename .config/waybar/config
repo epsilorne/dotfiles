@@ -1,0 +1,29 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": ["sway/workspaces", "custom/div", "sway/window", "sway/mode"],
+  "modules-right": ["custom/emoji_time", "custom/div", "clock"],
+
+  "sway/workspaces": {
+    "format": "({name})",
+    "max-length": 10,
+  },
+
+  "clock": {
+    "format": "{:%I:%M %p}",
+  },
+
+  "custom/emoji_time": {
+    "exec": "~/.config/waybar/scripts/emoji_time.sh",
+    "interval": 60,
+  },
+
+  "sway/mode": {
+    "format": "MODE: {}"
+  },
+
+  "custom/div": {
+    "exec": "echo '|'",
+    "interval": 0,
+  },
+}

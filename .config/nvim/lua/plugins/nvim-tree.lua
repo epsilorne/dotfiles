@@ -11,21 +11,21 @@ return {
       renderer = {
         root_folder_label = false,
       },
-      -- view = {
-      --   adaptive_size = false,
-      --   float = {
-      --     enable = true,
-      --     open_win_config = {
-      --       relative = 'editor',
-      --       border = 'single',
-      --       width = 40,
-      --       height = 30,
-      --       row = 1,
-      --       col = 1,
-      --     },
-      --   },
-      --   width = 40,
-      -- },
+      view = {
+        -- adaptive_size = false,
+        -- float = {
+        --   enable = true,
+        --   open_win_config = {
+        --     relative = 'editor',
+        --     border = 'single',
+        --     width = 40,
+        --     height = 30,
+        --     row = 1,
+        --     col = 1,
+        --   },
+        -- },
+        width = 25,
+      },
     })
   end
 }

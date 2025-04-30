@@ -1,0 +1,26 @@
+#waybar{
+  background-color: #000000;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  
+  font-size: 18px;
+  font-family: FiraCode Nerd Font;
+}
+
+#workspaces{
+  padding: 5px 5px;
+  padding-left: 15px;
+}
+
+#window{
+  padding: 5px 5px;
+}
+
+#clock{
+  padding: 5px 5px;
+  padding-right: 15px;
+}
+
+#custom-div{
+  padding: 5px 10px;
+}
