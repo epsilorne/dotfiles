@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "swaylock",
+    "action" : "swaylock -f -i ~/.config/swaylock/config/login.png -c 000000 -s fit --font 'FiraCode Nerd Font' --indicator-idle-visible --indicator-caps-lock",
     "text" : "lock",
     "keybind" : "l",
 }

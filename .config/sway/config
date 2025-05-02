@@ -23,6 +23,9 @@ set $menu wofi --show run
 # Logout menu
 set $lmenu wlogout -b 2 -p layer-shell -c 10px -r 10px
 
+# Lock menu
+set $lock 'swaylock -f -i ~/.config/swaylock/config/login.png -c 000000 -s fit --font "FiraCode Nerd Font" --indicator-idle-visible --indicator-caps-lock'
+
 include /etc/sway/config-vars.d/*
 
 default_border pixel 2
@@ -44,9 +47,9 @@ output * bg ~/Downloads/glt2.png fill
 #
 
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
+         timeout 300 '$lock -c 000000' \
          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f -c 000000'
+         before-sleep '$lock -c 000000'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -60,6 +63,11 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
     natural_scroll enabled
     middle_emulation enabled
 }
+
+#
+# Lock when lid shut:
+#
+bindswitch --reload --locked lid:on exec $lock
 
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -206,7 +214,17 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
-
+#
+# Volume controls:
+#
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+#
+# Display controls:
+#
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 #
 # Status Bar:
 #
@@ -214,5 +232,9 @@ bindsym $mod+r mode "resize"
 bar {
     swaybar_command waybar
 }
+
+# Floating Windows
+for_window [app_id="pavucontrol"] floating enable, resize set width 300px height 400px, move position cursor, move down 50
+for_window [title="ical"] floating enable, move position cursor, move down 50
 
 include /etc/sway/config.d/*

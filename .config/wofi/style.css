@@ -18,6 +18,9 @@ window{
 
 #entry:selected{
   background-color: #ffffff;
+}
+
+#entry:selected label{
   color: #000000;
 }
 

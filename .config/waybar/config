@@ -2,7 +2,7 @@
   "layer": "top",
   "position": "top",
   "modules-left": ["sway/workspaces", "custom/div", "sway/window", "sway/mode"],
-  "modules-right": ["custom/emoji_time", "custom/div", "clock"],
+  "modules-right": ["pulseaudio", "custom/div", "network", "custom/div", "custom/emoji_time", "custom/div", "clock"],
 
   "sway/workspaces": {
     "format": "({name})",
@@ -11,6 +11,33 @@
 
   "clock": {
     "format": "{:%I:%M %p}",
+    "on-click": "swaymsg exec 'alacritty --title ical --option window.dimensions.columns=22 --option window.dimensions.lines=9 -e ~/.config/waybar/scripts/ical.sh'",
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "headphones": "󰋋",
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
+    },
+    "on-click": "GTK_THEME=Adwaita:dark pavucontrol"
+  },
+
+  "network": {
+    "format": "{icon}",
+    "format-disconnected": "󱛅",
+    "format-ethernet": "󰈀",
+    "format-icons": [
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨",
+    ]
   },
 
   "custom/emoji_time": {
