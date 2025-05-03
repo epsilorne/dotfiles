@@ -26,18 +26,20 @@ local opts = {
       "netrwPlugin"
     }
   },
+  ui = {
+    border = "single",
+  },
 }
 
 -- Setup lazy.nvim
 require("lazy").setup('plugins',  opts)
 
 -- Set transparency for windows
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
 
--- Set transparency for bufferline
--- vim.api.nvim_set_hl(0, "BufferLineFill", { bg = "none" })
--- vim.api.nvim_set_hl(0, "BufferLineBackground", { bg = "none" })
--- vim.api.nvim_set_hl(0, "BufferLineBufferVisible", { bg = "none" })
--- vim.api.nvim_set_hl(0, "BufferLineTab", { bg = "none" })
+-- Setup LSPs
+vim.diagnostic.config({ virtual_text = true })
+vim.lsp.enable('clangd')
+vim.lsp.enable('basedpyright')

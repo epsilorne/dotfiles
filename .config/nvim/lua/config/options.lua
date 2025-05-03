@@ -25,6 +25,8 @@ opt.scrolloff = 8
 opt.colorcolumn = '80'
 opt.signcolumn = "yes"
 
+opt.winborder = "single"
+
 -- opt.cmdheight = 1
 -- opt.scrolloff = 10
 -- opt.completeopt = "menuone,noinsert,noselect"

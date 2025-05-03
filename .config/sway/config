@@ -26,6 +26,9 @@ set $lmenu wlogout -b 2 -p layer-shell -c 10px -r 10px
 # Lock menu
 set $lock 'swaylock -f -i ~/.config/swaylock/config/login.png -c 000000 -s fit --font "FiraCode Nerd Font" --indicator-idle-visible --indicator-caps-lock'
 
+# Close confirmation menu
+set $close_menu '~/.config/sway/scripts/confirm_close.sh'
+
 include /etc/sway/config-vars.d/*
 
 default_border pixel 2
@@ -82,7 +85,7 @@ input "type:pointer" accel_profile flat
     bindsym $mod+Return exec $term
 
     # Kill focused window
-    bindsym $mod+Shift+q kill
+    bindsym $mod+Shift+q exec $close_menu
 
     # Start your launcher
     bindsym $mod+alt+space exec $menu
