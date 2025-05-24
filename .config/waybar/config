@@ -1,17 +1,18 @@
 {
   "layer": "top",
   "position": "top",
-  "modules-left": ["sway/workspaces", "custom/div", "sway/window", "sway/mode"],
-  "modules-right": ["pulseaudio", "custom/div", "network", "custom/div", "custom/emoji_time", "custom/div", "clock"],
+  "modules-left": ["sway/workspaces", "sway/mode"],
+  "modules-center": ["custom/spotify"],
+  "modules-right": ["pulseaudio", "network", "clock"],
 
   "sway/workspaces": {
-    "format": "({name})",
-    "max-length": 10,
+    "disable-scroll": true,
+    "all-outputs": true,
+    "tooltip": false
   },
 
   "clock": {
     "format": "{:%I:%M %p}",
-    "on-click": "swaymsg exec 'alacritty --title ical --option window.dimensions.columns=22 --option window.dimensions.lines=9 -e ~/.config/waybar/scripts/ical.sh'",
   },
 
   "pulseaudio": {
@@ -25,7 +26,7 @@
         "󰕾"
       ]
     },
-    "on-click": "GTK_THEME=Adwaita:dark pavucontrol"
+    "on-click": "pavucontrol"
   },
 
   "network": {
@@ -40,17 +41,13 @@
     ]
   },
 
-  "custom/emoji_time": {
-    "exec": "~/.config/waybar/scripts/emoji_time.sh",
-    "interval": 60,
+  "custom/spotify": {
+    "exec": "~/.config/waybar/scripts/mediaplayer.sh",
+    "exec-if": "pgrep spotify",
+    "interval": 2,
   },
 
   "sway/mode": {
     "format": "MODE: {}"
-  },
-
-  "custom/div": {
-    "exec": "echo '|'",
-    "interval": 0,
   },
 }

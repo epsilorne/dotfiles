@@ -7,18 +7,18 @@ opt.softtabstop = 2
 opt.expandtab = true
 opt.smartindent = true
 opt.wrap = false
---
+
 -- -- Search
 -- opt.incsearch = true
 -- opt.ignorecase = true
 -- opt.smartcase = true
---
+
 -- -- Visuals
 opt.number = true
 opt.relativenumber = true
 opt.fillchars = {eob = " "}
 opt.showtabline = 0
-opt.termguicolors = true
+-- opt.termguicolors = true
 
 opt.scrolloff = 8
 

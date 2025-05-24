@@ -1,7 +1,7 @@
 return {
-  "iagorrr/noctis-high-contrast.nvim", 
+  "wnkz/monoglow.nvim",
   lazy = false,
   config = function()
-    vim.cmd('colorscheme noctishc')
+    vim.cmd('colorscheme monoglow')
   end
 }

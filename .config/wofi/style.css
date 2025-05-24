@@ -1,29 +1,50 @@
 window{
-  background-color: #000000;
-  border: 2px solid #ffffff;
-  color: #ffffff;
-  
-  font-size: 18px;
+  font-size: 14px;
   font-family: FiraCode Nerd Font;
+
+  margin: 0px;
+  
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  background-color: rgba(18, 18, 18, 0.95);
 }
 
 #input{
-  background-color: #000000;
-  border: 2px solid #ffffff;
+  margin: 5px;
+  border: none;
+
   color: #ffffff;
-  
-  font-size: 18px;
-  font-family: FiraCode Nerd Font;
+  background-color: rgba(18, 18, 18, 0.95);
+}
+
+#inner-box{
+  margin: 5px;
+  border: none;
+}
+
+#text{
+  color: #595959;
+  border: none;
+}
+
+entry{
+  border: none;
 }
 
 #entry:selected{
-  background-color: #ffffff;
+  background-color: transparent;
+  border: none;
+}
+
+#entry:focus{
+  border: none;
 }
 
 #entry:selected label{
-  color: #000000;
+  color: #ffffff;
 }
 
 #scroll{
-  color: #ffffff;
+  margin: 0px;
+  border: none;
 }

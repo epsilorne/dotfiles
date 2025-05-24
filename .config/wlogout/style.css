@@ -5,16 +5,12 @@ window{
   background-color: rgba(10, 10, 10, 0.7);
 }
 
-#buttons{
-  padding: 2100px
-}
-
 button{
-  background-color: #000000;
-  border: 2px solid #ffffff;
+  background-color: #121212;
+  border: 1px solid #ffffff;
   color: #ffffff;
 
-  font-size: 18px;
+  font-size: 14px;
   font-family: FiraCode Nerd Font;
 
   padding: 50px;
@@ -23,6 +19,6 @@ button{
 
 button:focus, button:active, button:hover{
 	background-color: #ffffff;
-  color: #000000;
+  color: #121212;
 	outline-style: none;
 }

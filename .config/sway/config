@@ -4,6 +4,12 @@ font pango:FiraCode Nerd Font 14
 gaps inner 10px
 gaps outer 10px
 
+corner_radius 10
+
+shadows enable
+shadow_blur_radius 0
+default_dim_inactive 0.05
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -14,7 +20,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty 
+set $term kitty 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -26,19 +32,16 @@ set $lmenu wlogout -b 2 -p layer-shell -c 10px -r 10px
 # Lock menu
 set $lock 'swaylock -f -i ~/.config/swaylock/config/login.png -c 000000 -s fit --font "FiraCode Nerd Font" --indicator-idle-visible --indicator-caps-lock'
 
-# Close confirmation menu
-set $close_menu '~/.config/sway/scripts/confirm_close.sh'
-
 include /etc/sway/config-vars.d/*
 
-default_border pixel 2
+default_border pixel 1
 client.focused #ffffff #ffffff #ffffff #ffffff #ffffff
 client.unfocused #595959 #595959 #595959 #595959 #595959
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Downloads/glt2.png fill
+output * bg ~/Wallpapers/mountains.jpg fill
 #
 # Example configuration:
 #
@@ -85,7 +88,7 @@ input "type:pointer" accel_profile flat
     bindsym $mod+Return exec $term
 
     # Kill focused window
-    bindsym $mod+Shift+q exec $close_menu
+    bindsym $mod+Shift+q exec swaymsg kill
 
     # Start your launcher
     bindsym $mod+alt+space exec $menu
